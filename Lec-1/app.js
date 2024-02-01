@@ -1,8 +1,8 @@
 
 // Date 01-02-2024
 
-// Example - 1
 
+// Example - 1
 
 // create elements is a core thing of react so we used React object 
 const heading = React.createElement(
@@ -23,7 +23,6 @@ root.render(heading);
 
 // Example - 2 Creating Nested Element Using React
 
-
 let nestedHeading = React.createElement(
     "div",
     {id:"parent"},
@@ -36,7 +35,6 @@ let nestedHeading = React.createElement(
 console.log(nestedHeading); //Object
 root.render(nestedHeading);
 
-// Note: React elements are objects. While rendering on dom, it converts into html element which browser can understand.
 /**
  <div id="root">
     <div id="parent">
@@ -47,6 +45,8 @@ root.render(nestedHeading);
 </div>
  */
 
+/////////////////
+// Note: React elements are objects. While rendering on dom, it converts into html element which browser can understand.
 
 nestedHeading = React.createElement(
     "div",
