@@ -1,0 +1,12 @@
+{
+  "name": "episode-2",
+  "version": "1.0.0",
+  "description": "I'm Improving The Level Of My React Knowledge.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["ajay mahiwal, react.js, react"],
+  "author": "Ajay Mahiwal",
+  "license": "ISC"
+}
