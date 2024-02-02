@@ -44,4 +44,4 @@ example with emmet:
 
 
 ## What is CDN ? Why do we use it ?
-CDN (Content Delivery Network), it is a network of distribuited server
+CDN (Content Delivery Network), it is a network of distribuited server 
