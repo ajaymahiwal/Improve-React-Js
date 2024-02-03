@@ -2,11 +2,24 @@
   "name": "episode-2",
   "version": "1.0.0",
   "description": "I'm Improving The Level Of My React Knowledge.",
-  "main": "app.js",
   "scripts": {
+    "dev-start": "parcel index.html",
     "test": "jest"
   },
-  "keywords": ["ajay mahiwal, react.js, react"],
+  "keywords": [
+    "ajay mahiwal, react.js, react","parcel","bundler"
+  ],
   "author": "Ajay Mahiwal",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
 }
