@@ -14,8 +14,11 @@ root1.render(heading1);
 
 const root2 = ReactDOM.createRoot(document.getElementById("root2"));
 
-// const heading2 = <h1>Hello From ReactJS But Using JSX.</h1>;
+const heading2 = <h1>Hello From ReactJS But Using JSX.</h1>;
 // root2.render(heading2);
+
+console.log(heading1);
+console.log(heading2);
 
 const TitleCompo = ()=>{
     return (
@@ -25,7 +28,7 @@ const TitleCompo = ()=>{
     )
 }
 console.log({TitleCompo});
-console.log(TitleCompo);
+console.log("This is TitleCompo",TitleCompo);
 
 
 const head = <h1>I'm a head react element created with JSX</h1>;
@@ -34,7 +37,7 @@ const Main = ()=>(
     <div>
         {head}
         {/* {TitleCompo}  It will not get rendered, it will be treated as some variable*/}
-        {TitleCompo}
+        {/* {TitleCompo} */}
         {<TitleCompo/>}
         {<TitleCompo></TitleCompo>}
         {TitleCompo()}
@@ -51,3 +54,47 @@ Directly using the function without the JSX syntax, like `{TitleCompo}`, will be
 
 So, the key takeaway is to always use the correct JSX syntax when including functional components as children in React. Use `<Component />` to represent the component and ensure it gets properly rendered.
  */
+
+
+
+// Practice
+
+
+
+const root3 = ReactDOM.createRoot(document.getElementById("root3"));
+const root4 = ReactDOM.createRoot(document.getElementById("root4"));
+const root5 = ReactDOM.createRoot(document.getElementById("root5"));
+
+// Functional Component
+const Card = ()=>{
+    return (
+        <div>
+            <h1>Functional-Compo</h1>
+            <h2>Functional-Compo</h2>
+            <h3>Functional-Compo</h3>
+        </div>
+    )
+}
+
+
+const Card1 = React.createElement(
+    "div",
+    {className:"card"},
+    [
+        React.createElement("h1",null,"Using Core React"),
+        React.createElement("h2",null,"Using Core React"),
+        React.createElement("h3",null,"Using Core React"),
+    ]
+);
+
+const Card2 = 
+    <div>
+        <h1>Using Jsx</h1>
+        <h2>Using Jsx</h2>
+        <h3>Using Jsx</h3>
+    </div>
+
+
+root3.render(<Card/>); //functional component
+root4.render(Card1); // using core react
+root5.render(Card2); // using jsx
