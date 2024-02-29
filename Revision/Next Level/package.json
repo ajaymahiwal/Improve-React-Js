@@ -1,14 +1,16 @@
 {
-  "name": "episode-3",
+  "name": "revisionmood",
   "version": "1.0.0",
-  "description": "",
-  "type":"module",
+  "description": "today date is 26 feb 2024 and i am improving my self and time is now 3:30pm (tea time of india) :)",
+  "main": "script.js",
   "scripts": {
     "start":"parcel index.html",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react"
+  ],
+  "author": "Ajay Mahiwal",
   "license": "ISC",
   "dependencies": {
     "parcel": "^2.11.0",

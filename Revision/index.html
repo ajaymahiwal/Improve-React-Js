@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First React App</title>
+</head>
+<body>
+    <div id="my-web">
+        <h1>This is my website using normal html.</h1>
+    </div>
+
+    <!-- we dont prefer to make root element with the help of class because it can create a inconsistancy in code if we used same class name in other elements etc. And we are using id only for one element this is our main mentality.-->
+    <div class="root-c"></div>
+    
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        console.log("file is conneted !");
+        console.log("React", React);
+        console.log("ReactDOM",ReactDOM);
+
+        const heading = React.createElement("h1",{className:"helloji"},"Hello Jii From React !");
+        console.log("heading",heading);
+        const root = ReactDOM.createRoot(document.getElementById("my-web"));
+        console.log("root",root);
+        root.render(heading);
+        console.log("root.render",root.render)
+
+
+
+        // creating some nested structure using react 
+        const nestedRoot = ReactDOM.createRoot(document.querySelector(".root-c"));
+        /*
+            <div>
+                <div id="par-1" class="par-1">
+                    <h1>I am a H1 inside the par-1 id.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo modi quibusdam itaque vel et nesciunt ipsam repellat ipsum, aut accusantium nisi accusamus culpa molestiae iste eius officia sit, expedita tempora?</p>
+                </div>
+                <div id="par-2" class="par-2">
+                    <div>div-1 of par-2</div>
+                    <p>p of par-2</p>
+                </div>
+            </div>
+        */
+        const nestedStructure = React.createElement("div",{},
+        [
+        React.createElement("div",{id:"par-1",className:"par-1"},
+            [   
+                React.createElement("h1",{},"I am a H1 inside the par-1 id."), 
+                React.createElement("p",{},"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo modi quibusdam itaque vel et nesciunt ipsam repellat ipsum, aut accusantium nisi accusamus culpa molestiae iste eius officia sit, expedita tempora?")
+            ]), 
+        React.createElement("div",{id:"par-2",className:"par-2"},
+            [   
+                React.createElement("div",{},"div-1 of par-2"),
+                React.createElement("p",{},"p of par-2")
+            ])
+        ]);
+
+        nestedRoot.render(nestedStructure);
+    </script>
+</body>
+</html>
