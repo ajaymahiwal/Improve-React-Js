@@ -27,8 +27,9 @@ const TitleCompo = ()=>{
         </div>
     )
 }
-console.log({TitleCompo});
-console.log("This is TitleCompo",TitleCompo);
+console.log(<TitleCompo/>); //got converted into js object yani react element
+console.log(TitleCompo()); //same as above object ✅
+console.log("This is TitleCompo",TitleCompo); // JSX Written function in form of react js funx body like we tried in babel online on website.
 
 
 const head = <h1>I'm a head react element created with JSX</h1>;
@@ -98,3 +99,6 @@ const Card2 =
 root3.render(<Card/>); //functional component
 root4.render(Card1); // using core react
 root5.render(Card2); // using jsx
+
+
+console.log(root5.render) // function of react-dom file
