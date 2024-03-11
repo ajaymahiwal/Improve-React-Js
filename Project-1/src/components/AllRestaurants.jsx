@@ -6,8 +6,7 @@ const AllRestaurantCards = () => {
     return (
         <div className='all-restaus'>
             {allResData.map((res,idx) => {
-                // console.log(res)
-                return <RestaurantCard resInfo={res.info}/>
+                return <RestaurantCard resInfo={res.info} key={idx}/>
             })}
         </div>
     )

@@ -2,9 +2,9 @@
 import {IMG_URL} from "../../constants";
 
 const RestaurantCard = ({resInfo}) => {
-    console.log(resInfo)
+    // console.log(resInfo)
     return (
-        <div className='restau-card' id={resInfo.veg ? "veg" : "non-veg"}>
+        <div className='restau-card' id={resInfo.veg ? "veg" : "non-veg"} >
             <h2>{resInfo.name}</h2>
             <p>Description of that</p>
             <img src={IMG_URL+resInfo.cloudinaryImageId} alt='restaurant image' />
