@@ -1,0 +1,23 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(238, 209, 48);
+}
+nav ul{
+    display: flex;
+    column-gap: 2rem;
+}
+
+li{
+    list-style: none;
+}
+li > a{
+    font-size: 1.2rem;
+}
