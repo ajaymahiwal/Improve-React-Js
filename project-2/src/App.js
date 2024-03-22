@@ -2,7 +2,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
-import About from "./components/About"
+import About from "./components/About";
+import UserClass from "./components/UserClass";
 import { Outlet, RouterProvider, createBrowserRouter,Link } from "react-router-dom";
 // console.log("script file is connected")
 
@@ -10,6 +11,8 @@ const App = ()=>{
     return(
     <>
         <Header/>
+        <UserClass name={"ajay"} location={"jind"}/>
+        {/* <Outlet/> */}
     </>
     )
 };
@@ -20,7 +23,7 @@ const routers = createBrowserRouter([
         path:"/",
         element:<App/>,
         children:[
-
+            
         ]
     },
     {
