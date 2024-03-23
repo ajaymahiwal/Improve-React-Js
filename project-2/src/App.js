@@ -7,11 +7,14 @@ import UserClass from "./components/UserClass";
 import { Outlet, RouterProvider, createBrowserRouter,Link } from "react-router-dom";
 // console.log("script file is connected")
 
+import AllUsers from "./components/AllUsers-CBC";
+
 const App = ()=>{
     return(
     <>
         <Header/>
-        <UserClass name={"ajay"} location={"jind"}/>
+        <AllUsers></AllUsers>
+        {/* <UserClass name={"ajay"} location={"jind"}/> */}
         {/* <Outlet/> */}
     </>
     )
