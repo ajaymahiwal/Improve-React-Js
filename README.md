@@ -47,3 +47,35 @@ During the mounting phase, React performs the following steps:
 3. It calls the render method of the component class to generate the component's HTML output.
 4. It inserts the component's HTML output into the DOM.
 Once the component is mounted, it is considered to be "live" and can respond to user interactions and state changes.
+
+
+
+# Why can't make useEffect hook callback async ???
+The useEffect hook is a React hook that tells React to run a side effect after rendering. This can be useful for fetching data, setting up subscriptions, or updating the DOM.
+The first argument to the useEffect hook is a function that will be executed after rendering. This function can be async, but it cannot return a Promise. This is because the useEffect hook expects the effect function to return either a cleanup function or nothing at all.
+If you need to use an async function in the useEffect hook, you can use the following workaround:
+
+
+```javascript
+useEffect(() => {
+  async function fetchData() {
+    // Fetch data here
+  }
+
+  fetchData();
+
+  // Return a cleanup function
+  return () => {
+    // Clean up any side effects here
+  };
+}, []);
+```
+
+This will ensure that the effect function is executed asynchronously, but that the cleanup function is still called when the component unmounts.
+
+Here are some of the reasons why you can't make useEffect callback async:
+
+1. The useEffect hook expects its effect function to return either a cleanup function or nothing at all. This is due to the useEffect() hook's callback function's asynchronous execution and lack of blocking.
+2. If you make the useEffect callback async, it will return a Promise. This is not what the useEffect hook expects, and it will cause an error.
+3. If you want to use an async function in the useEffect hook, you can use the workaround above. This will ensure that the effect function is executed asynchronously, but that the cleanup function is still called when the component unmounts.
+Overall, it is important to understand why you can't make useEffect callback async. This will help you to avoid errors and write better React code.

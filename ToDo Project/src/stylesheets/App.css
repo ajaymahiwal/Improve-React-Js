@@ -1,0 +1,48 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100dvh;
+}
+
+header{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+header > nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > nav > ul{
+    display: flex;
+    gap: 2rem;
+}
+a{
+    text-decoration: none;
+}
+header > nav  a{
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+header > nav > ul > li > a{
+    font-size: 1.3rem;
+}
+li{
+    list-style: none;
+}
+footer{
+    height: 10rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: aquamarine;
+}
