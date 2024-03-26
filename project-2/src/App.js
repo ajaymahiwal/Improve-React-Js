@@ -1,5 +1,5 @@
 
-import React from "react";
+import React,{useContext, useEffect,useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -8,11 +8,24 @@ import { Outlet, RouterProvider, createBrowserRouter,Link } from "react-router-d
 // console.log("script file is connected")
 
 import AllUsers from "./components/AllUsers-CBC";
+import UserContext from "./utils/UserContext";
 
 const App = ()=>{
+    // console.log(useContext(UserContext));
+
+    let[username,setUserName] = useState("null");
+    useEffect(()=>{
+        const data = {
+            name:"AjayRaj Mahiwal",
+        }
+        setUserName(data.name);
+    },[]);
+
     return(
     <>
-        <Header/>
+        <UserContext.Provider value={{currUser:username,setUserName}}>
+            <Header/>
+        </UserContext.Provider>
         <AllUsers></AllUsers>
         {/* <UserClass name={"ajay"} location={"jind"}/> */}
         {/* <Outlet/> */}

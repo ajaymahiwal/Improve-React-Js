@@ -8,7 +8,11 @@ header{
     padding: 2rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: rgb(238, 209, 48);
+}
+header > div{
+    width: 100%;
 }
 nav ul{
     display: flex;

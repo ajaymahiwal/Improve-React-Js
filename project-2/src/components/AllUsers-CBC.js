@@ -2,7 +2,7 @@
 
 import React from "react";
 import User from "./User-CBC";
-
+import UserContext from "../utils/UserContext";
 
 
 class AllUsers extends React.Component{
@@ -21,6 +21,17 @@ class AllUsers extends React.Component{
 
         return(
             <div className="all-users">
+                    {/* <UserContext.Consumer>
+                        {value=>(
+                            <div>
+                            <label>Change Username</label>
+                            <input className="m-5 border" value={value.currUser} name="username" onChange={(e)=>{
+                                console.log(e.target.value);
+                                value.setUserName(e.target.value);
+                            }}></input>
+                            </div>
+                        )}
+                    </UserContext.Consumer> */}
                 <User name="First" location="Bharat"></User>
                 <User name="Second" location="Bharat"></User>
             </div>
