@@ -240,3 +240,103 @@ In this example:
 - Otherwise, it renders its children normally.
 
 By using Suspense, React.lazy, Fallback, and Error Boundaries in your React application, you can create a more robust and user-friendly experience, handling loading states and errors gracefully while improving performance with code splitting and lazy loading.
+
+ 
+----
+
+# Data is the new oil ep-11
+
+Certainly! Here's a comprehensive guide to using context in React, covering `createContext`, `Provider`, and consuming components with `useContext` and `Consumer`:
+
+**1. createContext:**
+
+- **Purpose:** 
+  - `createContext` is used to create a new context object.
+- **Syntax:**
+  ```javascript
+  const MyContext = React.createContext(defaultValue);
+  ```
+  - `defaultValue` (optional): The value to use when a component does not have a matching `Provider` above it in the tree.
+- **Usage:** 
+  - Store the returned context object in a variable for later use.
+
+**2. Provider:**
+
+- **Purpose:** 
+  - `Provider` component provides the context value to its children.
+- **Syntax:**
+  ```javascript
+  <MyContext.Provider value={contextValue}>
+    {/* Child components */}
+  </MyContext.Provider>
+  ```
+  - `contextValue`: The value that the context provides to its descendants.
+- **Usage:** 
+  - Wrap the subtree of components that need access to the context value.
+
+**3. useContext:**
+
+- **Purpose:** 
+  - `useContext` hook allows functional components to consume context values.
+- **Syntax:**
+  ```javascript
+  const value = useContext(MyContext);
+  ```
+- **Usage:** 
+  - Call `useContext` within a functional component to access the current context value.
+  - Pass the context object (`MyContext`) as an argument to `useContext`.
+  - `useContext` returns the current context value provided by the nearest `Provider` above the calling component.
+
+**4. Consumer:**
+
+- **Purpose:** 
+  - `Consumer` component allows class components to consume context values.
+- **Syntax:**
+  ```javascript
+  <MyContext.Consumer>
+    {value => /* render something based on the context value */}
+  </MyContext.Consumer>
+  ```
+- **Usage:** 
+  - Use within the render method of a class component.
+  - Access the context value passed as an argument to the function inside the `Consumer`.
+
+**5. Multiple Contexts:**
+
+- **Purpose:** 
+  - You can use multiple contexts in the same application.
+- **Usage:** 
+  - Create separate context objects for different types of data.
+  - Use separate `Provider` components to provide different context values to different parts of the component tree.
+
+**6. Context Value Update:**
+
+- **Purpose:** 
+  - Context value can be updated dynamically.
+- **Usage:** 
+  - Update the context value using state management techniques like `useState` or other external data sources.
+  - Components consuming the context value will automatically re-render when the context value changes.
+
+**7. Fallback Value:**
+
+- **Purpose:** 
+  - If a component consumes a context but doesn't have a matching `Provider` above it in the tree, it will use the default value passed to `createContext`.
+- **Usage:** 
+  - Specify a default value when creating the context using `createContext`.
+
+**8. Performance Considerations:**
+
+- **Purpose:** 
+  - Optimize performance when using context.
+- **Usage:** 
+  - Memoize context values to prevent unnecessary re-renders.
+  - Break down context providers into smaller, focused components to optimize re-renders.
+
+**9. Testing:**
+
+- **Purpose:** 
+  - Test components that consume context values.
+- **Usage:** 
+  - Provide mock implementations of context values using testing utilities like `jest.mock` or `react-testing-library`.
+
+Using context in React provides a convenient way to pass data through the component tree without having to pass props manually at every level. It's particularly useful for global data such as themes, user authentication, or localization. By understanding these concepts, you can effectively manage and consume context values in your React applications.
