@@ -52,3 +52,32 @@ If you're using Jest 28 or later, jest-environment-jsdom package now must be ins
 ````shell
 npm install --save-dev jest-environment-jsdom
 ````
+
+8.  Testing component first time
+SyntaxError: C:\Users\LENOVO\OneDrive\Desktop\Namaste React\project-2\src\__tests__\About.test.js: Support for the experimental syntax 'jsx' isn't currently enabled (6:12):
+
+SO, `Install the @babel/preset-react`
+
+````shell
+npm install --save-dev @babel/preset-react
+````
+
+And Then include it inside babel config file.
+`["@babel/preset-react", {runtime:"automatic"}]`
+
+**file will look like  after that config adding**
+````babel.config.cjs
+module.exports = {
+    presets: [
+      ['@babel/preset-env', {targets: {node: 'current'}}],
+      ["@babel/preset-react", {runtime:"automatic"}]
+  ],
+  };
+````
+
+9. `Error`: toBeInTheDocument is not a function. SO  install
+
+````shell
+npm install --save-dev @testing-library/jest-dom
+````
+Then import it `import '@testing-library/jest-dom'`

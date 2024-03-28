@@ -9,6 +9,7 @@ import { Outlet, RouterProvider, createBrowserRouter,Link } from "react-router-d
 
 import AllUsers from "./components/AllUsers-CBC";
 import UserContext from "./utils/UserContext";
+import Contact from "./components/Contact";
 
 const App = ()=>{
     // console.log(useContext(UserContext));
@@ -109,7 +110,7 @@ const routers = createBrowserRouter([
     },
     {
         path:"/contact",
-        element:<App/>,
+        element:<Contact/>,
         children:[
 
         ]
