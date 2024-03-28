@@ -4,5 +4,5 @@ dist
 .parcel-cache
 practice
 temp
-
+coverage
 my_api
