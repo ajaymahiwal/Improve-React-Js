@@ -1,0 +1,24 @@
+
+.text-custom{
+    text-shadow: -3px 3px 3px white;
+}
+
+.offers-card{
+    /* border:2px solid red; */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+
+.offers-card::-webkit-scrollbar {
+    height: 3px;
+  }
+   
+  .offers-card::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .offers-card::-webkit-scrollbar-thumb {
+    background-color: black;
+    outline: 1px solid slategrey;
+  }
